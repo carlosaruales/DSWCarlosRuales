@@ -5,68 +5,134 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"> 
 </head>
 <body>
     <header>
         Etiquetas semánticas, Listas y enlaces
     </header>
-    <nav>
+    <nav class="menu-area">
         <ul>
-            <li>Inicio</li>
-            <li>Temas</li>
-                <ul>
-                    <li>Tema 1</li>
-                    <li>Tema 2</li>
+            <li> <a href="#inicio">Inicio</a> </li>
+            <li><a href="#">Temas</a>
+                <ul class="dropdown-1">
+                    <li><a href="#tema1">Tema1</a></li>
+                    <li><a href="#tema2">Tema 2</a></li>
                 </ul>
-            <li>Recursos digitales</li>
-                <ul>
-                    <li>Recurso digital 1</li>
-                    <li>Recurso digital 2</li>
+            </li>
+            <li><a href="#">Recursos</a>
+                <ul class="dropdown-1">
+                    <li> <a href="#recurso1">Recurso 1</a> </li>
+                    <li><a href="#recurso2">Recurso 2</a></li>
                 </ul>
-            <li>Aprendizaje</li>
-                <ul>
-                    <li>Aprendizaje 1</li>
-                    <li>Aprendizaje 2</li>
-                </ul>
-            <li>Acerca de</li>
-                <ul>
-                    <li>Carlos andrés ruales acosta</li>
-                </ul>
+            </li>
+            <li><a href="#autor">Autor</a></li>
         </ul>
     </nav>
 
-    <section>
-        <p>
-            El proposito de este sitio web es, mediante una explicación sencilla cómo funcionan las etiquetas HTML, las listas numeradas y las no numeradas
-            al igual que el funcionamiento de los enlaces.
-        </p>
-    </section>
+    <div class="contenedor">
+        <aside>
+            <h5> Recursos digitales</h5>
+            <div id="recurso1">
+                <iframe width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/4N3pcvL9O_k" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
 
-    <img src="../src/img/mockup.png" alt="mokcup">
+            <div id="recurso2">
+                <iframe width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/IRbEXqBBOCo"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+            </div>
+        </aside>
 
-    <article>
-        <p>
-            HTML es un lenguaje utilizado para generar contenido visual codificando en forma de etiquetas; La semántica general que aplica
-            es que la apertura de una etiqueta de por si lleva una etiqueta de cierre, que es la misma etiqueta de apertura solo que con un "/".
-            Sin embargo, como toda regla tiene su excepción, existen algunas que no necesariamente llevan esto, como por el ejemplo la etiqueta br,
-            que solo se le permite colocar etiqueta de apertura.
-        </p>
+        <section class="main">
+            <p id="#inicio">
+                <h1>
+                    Inicio
+                </h1>
+                
+                El proposito de este sitio web es, mediante una explicación sencilla cómo funcionan las etiquetas HTML, las listas numeradas y las no numeradas
+                al igual que el funcionamiento de los enlaces.
+            </p>
+            <img src="../src/img/mockup.png" alt="mokcup">
+        
+            <article id="tema1">
+                <h1>
+                    Semantica
+                </h1>
+                <p>
+                    HTML es un lenguaje utilizado para generar contenido visual codificando en forma de etiquetas; La semántica general que aplica
+                    es que la apertura de una etiqueta de por si lleva una etiqueta de cierre, que es la misma etiqueta de apertura solo que con un "/".
+                    Sin embargo, como toda regla tiene su excepción, existen algunas que no necesariamente llevan esto, como por el ejemplo la etiqueta br,
+                    que solo se le permite colocar etiqueta de apertura.
+                </p>
+        
+                <p>
+                    Las listas son parte fundamental HTML, existen etiquetas ordenadas y sin orden: ul: unordered list, ol: ordered list. Estas etiquetas 
+                    junto con algo de código CSS hacen menús navegables muy poderosos y esteticamente muy llamativos.
+                </p>
+        
+                <p>
+                    Por último los enlaces, como su nombre lo indica, crea enlaces hacia otras páginas que normalmente contienen más detalle del recurso que 
+                    se requiere visualizar. En páginas tipo SPA (single page application) estos enlaces llevan hacia rutas definidas en routers, que no cargan
+                    todo el contenido HTML de nuevo, si no que sólo carga la parte que falta renderizar.
+                </p>
+        
+                <img src="../src/img/semantica.png" alt="Imagen">
+            </article>
 
-        <p>
-            Las listas son parte fundamental HTML, existen etiquetas ordenadas y sin orden: ul: unordered list, ol: ordered list. Estas etiquetas 
-            junto con algo de código CSS hacen menús navegables muy poderosos y esteticamente muy llamativos.
-        </p>
+            <hr>
 
-        <p>
-            Por último los enlaces, como su nombre lo indica, crea enlaces hacia otras páginas que normalmente contienen más detalle del recurso que 
-            se requiere visualizar. En páginas tipo SPA (single page application) estos enlaces llevan hacia rutas definidas en routers, que no cargan
-            todo el contenido HTML de nuevo, si no que sólo carga la parte que falta renderizar.
-        </p>
+            <article id="tema2">
+                <h1>Listas</h2>
 
-        <img src="../src/img/semantica.png" alt="Imagen">
-    </article>
+                
+                <h2>
+                    Listas no ordenadas
+                </h2>
 
-    <footer>
+                <p>
+                    Las listas no ordenadas van dentro de la etiqueta <ul> HTML y de su cierre </ul>. Cada punto que queramos añadir a la lista, lo haremos dentro de la etiqueta <li> y su cierre.
+
+                        Si no le indicamos nada a la etiqueta <li> HTML, ésta se generará de forma automática. Pero si queremos definir nosotros mismo el símbolo del punto, podemos gracias al atributo “type”.
+                        
+                        Así podemos hacer que la lista esté definida por puntos negros (li type=”disc”), por puntos con el fondo blanco (li type=”circle”) o por cuadrados (li type=”square”). Aunque esta apariencia dependerá del navegador. Hay algunos navegadores que dan otras apariencias a estos mismos atributos.
+                </p>
+
+                <h2>
+                    Listas ordenadas
+                </h2>
+
+                <p>
+                    Las listas ordenadas van enmarcadas dentro de las etiquetas <ol> </ol>. Cada punto de la lista se escribe con la misma etiqueta que en las no numeradas: <li>. Pero al ser listas ordenadas los símbolos serán números y éstos se irán generando automáticamente por orden, conforme escribamos nuevos puntos.
+
+                        En las listas ordenadas podemos hacer que el primer punto comience con el número que nosotros queramos. Lo conseguiremos gracias al atributo “value”. Los siguientes puntos que escribamos se generarán automáticamente por orden, partiendo de ese número.
+                </p>
+
+                <img src="../src/img/listas.jpg" alt="Imagen">
+
+
+                <p>
+                    Fuente: https://www.hazunaweb.com/curso-de-html/listas/
+                </p>
+                
+            </article>
+        </section>
+    
+    </div>
+
+
+    <footer id="autor">
         Skype: mario.avila@unad.edu.co
         Fecha de actualización: 21/02/2021
     </footer>
